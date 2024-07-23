@@ -2,6 +2,6 @@
 
 Contributors:
 Jacob Ryan		JacobMRyan12
-Gilberto
-Asaf 
-Karla 
+Gilberto		Gilberto787
+Asaf 			Asafbishoy
+Karla 			gkarla33

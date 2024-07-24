@@ -1,4 +1,4 @@
 package com.revature.revbay.cart;
 
-public class cartService {
+public class CartService {
 }

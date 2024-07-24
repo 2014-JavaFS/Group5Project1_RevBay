@@ -1,4 +1,4 @@
 package com.revature.revbay.user;
 
-public class userService {
+public class UserService {
 }

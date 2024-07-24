@@ -1,6 +1,6 @@
 # RevatureProjectOneMeetingReports
 
-7/23/2024
-Project Is Just Starting so There isn't anyone talking about Roadblocks, Mostly figuring out how to setup the ERD.
+7/24/2024
+Yesterday the Team Got ERD Diagram Finished up. There wasn't really any roadblocks, and everything was pushed up to Git.
 
-We belive it will take 4 Tables, Jacob and Gilberto will be focusing on Learning Sprint Faster for their planed Trello/implementation goals While Karla and Asaf are focusing on getting the Java Side of the Project Setup.
+Today Asaf Volunteered himself to setup the Amazon Server for the Group Project, we broke up to do the Java Coding Challenge II assignment before doing the Booking and then Stand up Meeting.

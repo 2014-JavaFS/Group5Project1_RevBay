@@ -1,14 +1,13 @@
 package com.revature.revbay.user;
 
 import com.revature.revbay.util.exceptions.DataNotFoundException;
-import com.revature.revbay.util.interfaces.Serviceable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.naming.AuthenticationException;
 
 @Service
-public class UserService implements Serviceable<User> {
+public class UserService  {
     private final UserRepository userRepository;
 
     @Autowired
@@ -16,13 +15,13 @@ public class UserService implements Serviceable<User> {
         this.userRepository = userRepository;
     }
 
-    @Override
+
     public User create(User newUser) {
         newUser.setUserType(User.UserType.valueOf("BUYER"));
         return userRepository.save(newUser);
     }
 
-    @Override
+
     public User findById(int userId) {
         return userRepository.findById(userId).orElseThrow(
                 () -> new DataNotFoundException("No user found with that id")

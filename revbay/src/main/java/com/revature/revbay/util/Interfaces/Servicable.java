@@ -1,4 +1,9 @@
 package com.revature.revbay.util.Interfaces;
 
-public class Servicable {
+import java.util.List;
+
+public interface Servicable<O> {
+    List<O> findAll();
+    O create(O newObject);
+    O findById(int number);
 }

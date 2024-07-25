@@ -19,6 +19,11 @@ public class CartController {
         this.cartService = cartService;
     }
 
+    @PostMapping
+    public ResponseEntity<Cart> createNewCart(@RequestBody Cart cart){
+        return ResponseEntity.ok(cartService.create(cart));
+    }
+
     @GetMapping("/products")
     private ResponseEntity<List<Products>> getAllProducts(int userId) {
         return ResponseEntity.ok(cartService.findAllProductsByUserId(userId));
@@ -27,5 +32,17 @@ public class CartController {
     @PutMapping
     private ResponseEntity<Boolean> putUpdateCart(@RequestBody Cart updatedCart) {
         return ResponseEntity.ok(cartService.update(updatedCart));
+    }
+
+    /*
+    @GetMapping("/{id}")
+    public ResponseEntity<Cart> getByCartId(@PathVariable int id){
+        return ResponseEntity.ok(cartService.findById(id));
+    }
+    */
+
+    @DeleteMapping
+    public ResponseEntity<Boolean> deleteCart(@RequestBody Cart cart){
+        return ResponseEntity.ok(cartService.delete(cart));
     }
 }

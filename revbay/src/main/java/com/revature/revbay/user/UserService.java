@@ -1,39 +1,47 @@
 package com.revature.revbay.user;
 
+import com.revature.revbay.util.exceptions.DataNotFoundException;
+import com.revature.revbay.util.interfaces.Serviceable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.naming.AuthenticationException;
+
 @Service
-public class UserService {
+public class UserService implements Serviceable<User> {
     private final UserRepository userRepository;
 
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    //TODO: Products will need this method too. Change to interface later.
+
+    @Override
     public User create(User newUser) {
-        newUser.setUserType("BUYER");
-        return userRepository.create(newUser);
+        newUser.setUserType(User.UserType.valueOf("BUYER"));
+        return userRepository.save(newUser);
     }
 
-    //TODO: And this one...
+    @Override
     public User findById(int userId) {
-        return userRepository.findById(userId);
+        return userRepository.findById(userId).orElseThrow(
+                () -> new DataNotFoundException("No user found with that id")
+        );
     }
-
-    //TODO: And this one...
+    //TODO: Should these be in Serviceable??
     public boolean delete(User removedUser) {
-        return userRepository.delete(removedUser);
+        userRepository.delete(removedUser);
+        return true;
     }
 
-    //TODO: Maybe this one too...
     public boolean update(User updatedUser) {
-        return userRepository.update(updatedUser);
+        userRepository.save(updatedUser);
+        return true;
     }
 
-    public User findByEmailAndPassword(String email, String password){
-        return userRepository.findByEmailAndPassword(email, password);
+    public User findByEmailAndPassword(String email, String password) throws AuthenticationException {
+        return userRepository.findByEmailAndPassword(email, password).orElseThrow(
+                () -> new AuthenticationException("Invalid credentials provided.")
+        );
     }
-
 }

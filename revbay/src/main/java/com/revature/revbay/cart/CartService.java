@@ -1,6 +1,7 @@
 package com.revature.revbay.cart;
 
 import com.revature.revbay.products.Products;
+import com.revature.revbay.util.exceptions.DataNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,15 +17,14 @@ public class CartService {
         this.cartRepository = cartRepository;
     }
 
-//    public List<Products> findAllProductsByUserId(int userId){
-//        List<Products> products = cartRepository.findAllProductsByUserId(userId);
-//        if (products.isEmpty()) {
-//            //TODO throw exception
-//            return null;
-//        } else {
-//            return products;
-//        }
-//    }
+    public List<Cart> findAll(){
+        List<Cart> carts = cartRepository.findAll();
+        if(carts.isEmpty()){
+            throw new DataNotFoundException("No cart information found :(");
+        }else {
+            return carts;
+        }
+    }
 
     @Transactional
     public boolean update(Cart cartToUpdate) {

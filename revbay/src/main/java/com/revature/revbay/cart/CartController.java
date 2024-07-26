@@ -19,6 +19,11 @@ public class CartController {
         this.cartService = cartService;
     }
 
+    @GetMapping
+    public List<Cart> getAllCart(){
+        return cartService.findAll();
+    }
+
     @PostMapping
     public ResponseEntity<Cart> createNewCart(@RequestBody Cart cart){
         return ResponseEntity.ok(cartService.create(cart));

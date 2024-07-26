@@ -1,7 +1,7 @@
 # RevatureProjectOneMeetingReports
 
-7/25/2024
-Yesterday the Team finished up feature structures and aws database setup. There wasn't really any roadblocks, and everything was pushed up to Git.
+#### 7/25/2024
 
-Today we will be working on implementing jpa and spring framework into the application. 
-We divided tasks into features and later today we will merge our branches and see what new implementations need to be made.
+Yesterday we merged all our branches to prepare to work with our database. Our biggest hurdle were the merge conflicts, but we were able to successfully solve these.
+
+Today we are creating our property files and attempting to connect our projects with the remote database. After doing this we plan to continue working on our method implementations.

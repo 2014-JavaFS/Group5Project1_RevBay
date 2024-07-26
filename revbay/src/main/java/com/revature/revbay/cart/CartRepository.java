@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface CartRepository extends JpaRepository<Cart, Integer> {
     //TODO fix this since wrong query
-    @Query("SELECT * FROM cart where user_id = :userId")
-    List<Products> findAllProductsByUserId(int userId);
+//    @Query("SELECT * FROM cart where user_id = :userId")
+//    List<Products> findAllProductsByUserId(int userId);
 }

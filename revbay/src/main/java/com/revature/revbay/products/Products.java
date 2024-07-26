@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Products")
+@Table(name = "products")
 public class Products {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +21,10 @@ public class Products {
     @Enumerated(EnumType.STRING)
     private Category category;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
-    @Column(columnDefinition = "integer check (quantity>-1)")
+    //@Column(columnDefinition = "integer check (quantity>=0)")
     private int quantity;
-    @Column(columnDefinition = "double precision (price>0)")
+    //@Column(columnDefinition = "double precision (price>0)")
     private Double price;
 }

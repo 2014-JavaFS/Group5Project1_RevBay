@@ -1,5 +1,6 @@
 package com.revature.revbay.transactions;
 
+import com.revature.revbay.user.User;
 import jakarta.persistence.*;
 import jdk.jfr.DataAmount;
 import lombok.AllArgsConstructor;
@@ -22,15 +23,15 @@ public class Transactions {
     //Declaring Variables
     private int transactionID;
     @ManyToOne
-    @JoinColumn(name="user_id")
-    private int sellerID;
+    @JoinColumn(name="seller_id",referencedColumnName = "userId",nullable = false)
+    private User sellerID;
     @ManyToOne
-    @JoinColumn(name="user_id")
-    private int buyerID;
+    @JoinColumn(name="buyer_id",referencedColumnName = "userId",nullable = false)
+    private User buyerID;
     private BigDecimal totalPrice;
     private String destination;
     //Might need to be changed to a different Date Type
-    private Date currentTime;
+    //private Date currentTime;
 
 
 

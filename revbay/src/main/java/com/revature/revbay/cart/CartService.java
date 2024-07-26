@@ -16,15 +16,15 @@ public class CartService {
         this.cartRepository = cartRepository;
     }
 
-    public List<Products> findAllProductsByUserId(int userId){
-        List<Products> products = cartRepository.findAllProductsByUserId(userId);
-        if (products.isEmpty()) {
-            //TODO throw exception
-            return null;
-        } else {
-            return products;
-        }
-    }
+//    public List<Products> findAllProductsByUserId(int userId){
+//        List<Products> products = cartRepository.findAllProductsByUserId(userId);
+//        if (products.isEmpty()) {
+//            //TODO throw exception
+//            return null;
+//        } else {
+//            return products;
+//        }
+//    }
 
     @Transactional
     public boolean update(Cart cartToUpdate) {
@@ -32,12 +32,12 @@ public class CartService {
         return true;
     }
 
-    @PostMapping
+//    @PostMapping
     public Cart create(Cart cart) {
         return cartRepository.save(cart);
     }
 
-    @DeleteMapping
+//    @DeleteMapping
     public boolean delete(Cart cart) {
         cartRepository.delete(cart);
         return true;

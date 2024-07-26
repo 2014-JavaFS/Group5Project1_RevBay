@@ -2,10 +2,11 @@ package com.revature.revbay.transactions;
 
 import com.revature.revbay.util.exceptions.DataNotFoundException;
 import com.revature.revbay.util.exceptions.InvalidInputException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.function.Predicate;
-
+@Service
 public class TransactionsService  {
 
     // -> lamba: format () -> {}, defining any parameteres used by the function and it's execution. Parenthesis not necessary for oen parameter

@@ -22,7 +22,7 @@ public class UserController {
         return ResponseEntity.status(200).body(userService.findAll());
     }
 
-    @PostMapping
+    @PostMapping("/signup")
     private ResponseEntity<User> postNewUser(@RequestBody User user) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -35,9 +35,8 @@ public class UserController {
     }
 
     @DeleteMapping
-    private ResponseEntity<Void> deleteUser(@RequestBody User user) {
-        userService.delete(user);
-        return ResponseEntity.noContent().build();
+    private ResponseEntity<Boolean> deleteUser(@RequestBody User user) {
+        return ResponseEntity.ok(userService.delete(user));
     }
 
     @PutMapping

@@ -19,7 +19,6 @@ public class UserService  {
 
 
     public User create(User newUser) {
-        newUser.setUserType(User.UserType.valueOf("BUYER"));
         return userRepository.save(newUser);
     }
     public List<User> findAll(){
@@ -36,7 +35,7 @@ public class UserService  {
                 () -> new DataNotFoundException("No user found with that id")
         );
     }
-    //TODO: Should these be in Serviceable??
+
     public boolean delete(User removedUser) {
         userRepository.delete(removedUser);
         return true;
@@ -53,3 +52,4 @@ public class UserService  {
         );
     }
 }
+

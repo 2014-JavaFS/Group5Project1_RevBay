@@ -1,5 +1,6 @@
 package com.revature.revbay.cart;
 
+import com.revature.revbay.dtos.CartRequestDTO;
 import com.revature.revbay.products.Products;
 import com.revature.revbay.user.User;
 import jakarta.persistence.*;
@@ -24,4 +25,14 @@ public class Cart {
     private User user;
     private int quantity;
     private String address;
+
+    public Cart(CartRequestDTO cartRequestDTO) {
+        Products products = new Products();
+        products.setProductId(cartRequestDTO.getProductId());
+        this.products = products;
+        User user = new User();
+        user.setUserId(cartRequestDTO.getUserId());
+        this.quantity = cartRequestDTO.getQuantity();
+        this.address = cartRequestDTO.getAddress();
+    }
 }

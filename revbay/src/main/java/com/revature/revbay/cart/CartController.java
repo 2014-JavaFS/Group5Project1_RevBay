@@ -1,7 +1,10 @@
 package com.revature.revbay.cart;
 
+import com.revature.revbay.dtos.CartRequestDTO;
+import com.revature.revbay.dtos.CartResponseDTO;
 import com.revature.revbay.products.Products;
 import com.revature.revbay.products.ProductsService;
+import com.revature.revbay.user.User;
 import com.revature.revbay.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,10 +16,14 @@ import java.util.List;
 @RequestMapping("/cart")
 public class CartController {
     private final CartService cartService;
+    private final ProductsService productsService;
+    private final UserService userService;
 
     @Autowired
-    public CartController(CartService cartService) {
+    public CartController(CartService cartService, ProductsService productsService, UserService userService) {
         this.cartService = cartService;
+        this.productsService = productsService;
+        this.userService = userService;
     }
 
     @GetMapping
@@ -25,8 +32,17 @@ public class CartController {
     }
 
     @PostMapping
-    public ResponseEntity<Cart> createNewCart(@RequestBody Cart cart){
-        return ResponseEntity.ok(cartService.create(cart));
+    public ResponseEntity<CartResponseDTO> createNewCart(@RequestBody CartRequestDTO cartRequestDTO){
+        Products product = productsService.findById(cartRequestDTO.getProductId());
+        User user = userService.findById(cartRequestDTO.getUserId());
+
+        Cart cart = new Cart();
+        cart.setProducts(product);
+        cart.setUser(user);
+
+        CartResponseDTO cartResponseDTO = cartService.createCart(cart);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(cartResponseDTO);
     }
 
 //    @GetMapping

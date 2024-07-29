@@ -15,8 +15,8 @@ public class ProductsController {
         this.productsService = productsService;
     }
     @GetMapping
-    public List<Products> getAllProducts(){
-        return productsService.findAll();
+    public ResponseEntity<List<Products>> getAllProducts(){
+        return ResponseEntity.status(200).body(productsService.findAll());
     }
     @PostMapping
     public ResponseEntity<Products> createNewProducts(@RequestBody Products products){

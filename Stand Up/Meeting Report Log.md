@@ -1,12 +1,16 @@
 # RevatureProjectOneMeetingReports
 
-7/25/2024
+#### 7/25/2024
+Yesterday the Team finished up feature structures and aws database setup. There wasn't really any roadblocks, and everything was pushed up to Git.
 
-7/24/2024
+Today we will be working on implementing jpa and spring framework into the application. 
+We divided tasks into features and later today we will merge our branches and see what new implementations need to be made.
+
+#### 7/24/2024
 Today we accomplished setting creating a AWS for out project as well as solving the problems Charles left
 for us in bookingController. 
 
-7/23/2024
+#### 7/23/2024
 Project Is Just Starting so There isn't anyone talking about Roadblocks, Mostly figuring out how to setup the ERD.
 
 We belive it will take 4 Tables, Jacob and Gilberto will be focusing on Learning Sprint Faster for their planed Trello/implementation goals While Karla and Asaf are focusing on getting the Java Side of the Project Setup.

@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -15,7 +17,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
+    @PostMapping("/signup")
     private ResponseEntity<User> postNewUser(@RequestBody User user) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -28,9 +30,8 @@ public class UserController {
     }
 
     @DeleteMapping
-    private ResponseEntity<Void> deleteUser(@RequestBody User user) {
-        userService.delete(user);
-        return ResponseEntity.noContent().build();
+    private ResponseEntity<Boolean> deleteUser(@RequestBody User user) {
+        return ResponseEntity.ok(userService.delete(user));
     }
 
     @PutMapping

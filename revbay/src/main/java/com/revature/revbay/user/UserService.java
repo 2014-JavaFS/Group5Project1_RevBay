@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.naming.AuthenticationException;
+import java.util.List;
 
 @Service
 public class UserService  {
@@ -17,7 +18,6 @@ public class UserService  {
 
 
     public User create(User newUser) {
-        newUser.setUserType(User.UserType.valueOf("BUYER"));
         return userRepository.save(newUser);
     }
 
@@ -27,7 +27,7 @@ public class UserService  {
                 () -> new DataNotFoundException("No user found with that id")
         );
     }
-    //TODO: Should these be in Serviceable??
+
     public boolean delete(User removedUser) {
         userRepository.delete(removedUser);
         return true;
@@ -44,3 +44,4 @@ public class UserService  {
         );
     }
 }
+

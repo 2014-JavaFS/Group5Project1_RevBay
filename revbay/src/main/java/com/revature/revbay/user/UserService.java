@@ -1,5 +1,6 @@
 package com.revature.revbay.user;
 
+import com.revature.revbay.products.Products;
 import com.revature.revbay.util.exceptions.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,14 @@ public class UserService  {
     public User create(User newUser) {
         return userRepository.save(newUser);
     }
-
+    public List<User> findAll(){
+        List<User> users = userRepository.findAll();
+        if(users.isEmpty()){
+            throw new DataNotFoundException("No product information found");
+        }else {
+            return users;
+        }
+    }
 
     public User findById(int userId) {
         return userRepository.findById(userId).orElseThrow(

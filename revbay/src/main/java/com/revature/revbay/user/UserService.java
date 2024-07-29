@@ -18,7 +18,6 @@ public class UserService  {
 
 
     public User create(User newUser) {
-        newUser.setUserType(User.UserType.valueOf("BUYER"));
         return userRepository.save(newUser);
     }
 

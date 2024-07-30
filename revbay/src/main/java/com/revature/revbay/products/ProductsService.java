@@ -24,6 +24,11 @@ public class ProductsService {
             return products;
         }
     }
+    public List<Products> findProductsByUserId(int userId){
+        if(productsRepository.findProductsByUserId(userId).isPresent()){
+            return productsRepository.findProductsByUserId(userId).get();
+        }else throw new DataNotFoundException("No products for the user id");
+    }
     public Products create(Products products) {
         products.setCategory(Category.valueOf("GENERAL"));
         return productsRepository.save(products);

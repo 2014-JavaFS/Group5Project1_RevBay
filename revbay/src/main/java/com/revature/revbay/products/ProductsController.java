@@ -18,6 +18,10 @@ public class ProductsController {
     public ResponseEntity<List<Products>> getAllProducts(){
         return ResponseEntity.status(200).body(productsService.findAll());
     }
+    @GetMapping("/users/{userId}")
+    public ResponseEntity<List<Products>> getProductsByUserId(@PathVariable int userId){
+        return ResponseEntity.status(200).body(productsService.findProductsByUserId(userId));
+    }
     @PostMapping
     public ResponseEntity<Products> createNewProducts(@RequestBody Products products){
         return ResponseEntity.status(200).body(productsService.create(products));

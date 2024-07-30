@@ -23,7 +23,7 @@ public class ProductsController {
         return ResponseEntity.status(200).body(productsService.findProductsByUserId(userId));
     }
     @PostMapping
-    public ResponseEntity<Products> createNewProducts(@RequestBody Products products){
+    public ResponseEntity<Products> createNewProducts( @RequestBody Products products){
         return ResponseEntity.status(200).body(productsService.create(products));
     }
     @PutMapping

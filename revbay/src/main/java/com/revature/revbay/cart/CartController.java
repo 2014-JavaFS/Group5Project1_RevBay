@@ -45,11 +45,6 @@ public class CartController {
         return ResponseEntity.status(HttpStatus.CREATED).body(cartResponseDTO);
     }
 
-//    @GetMapping
-//    private ResponseEntity<List<Products>> getAllProducts(int userId) {
-//        return ResponseEntity.ok(cartService.findAllProductsByUserId(userId));
-//    }
-
     @PutMapping
     private ResponseEntity<Boolean> putUpdateCart(@RequestBody Cart updatedCart) {
         return ResponseEntity.ok(cartService.update(updatedCart));

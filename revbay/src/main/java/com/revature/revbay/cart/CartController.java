@@ -39,6 +39,8 @@ public class CartController {
         Cart cart = new Cart();
         cart.setProducts(product);
         cart.setUser(user);
+        cart.setQuantity(cartRequestDTO.getQuantity());
+        cart.setAddress(cartRequestDTO.getAddress());
 
         CartResponseDTO cartResponseDTO = cartService.createCart(cart);
 

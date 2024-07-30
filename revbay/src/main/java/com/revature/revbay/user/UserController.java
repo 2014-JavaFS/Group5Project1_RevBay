@@ -1,5 +1,6 @@
 package com.revature.revbay.user;
 
+import com.revature.revbay.products.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,10 @@ public class UserController {
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
+    }
+    @GetMapping
+    public ResponseEntity<List<User>> getAllProducts(){
+        return ResponseEntity.status(200).body(userService.findAll());
     }
 
     @PostMapping("/signup")

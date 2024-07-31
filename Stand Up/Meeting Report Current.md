@@ -1,7 +1,7 @@
 # RevatureProjectOneMeetingReports
 
-#### 7/25/2024
+#### 7/30/2024
 
-Yesterday we merged all our branches to prepare to work with our database. Our biggest hurdle were the merge conflicts, but we were able to successfully solve these.
+Yesterday the Team was working on fixing code related to making postman api calls function, and their about me section. Roadblocks were that what we thought our API was asking for wasn't what it actually wanted in some instances and caused issues.
 
-Today we are creating our property files and attempting to connect our projects with the remote database. After doing this we plan to continue working on our method implementations.
+Today We attempted to figure out and fix those API/Repository issues, and finish our about me things with time permiting studying for the test tommorow and doing the SQL competency assignment.

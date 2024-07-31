@@ -1,12 +1,15 @@
 package com.revature.revbay.cart;
 
+import com.revature.revbay.dtos.CartResponseDTO;
 import com.revature.revbay.products.Products;
+import com.revature.revbay.util.exceptions.DataNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CartService {
@@ -16,15 +19,14 @@ public class CartService {
         this.cartRepository = cartRepository;
     }
 
-//    public List<Products> findAllProductsByUserId(int userId){
-//        List<Products> products = cartRepository.findAllProductsByUserId(userId);
-//        if (products.isEmpty()) {
-//            //TODO throw exception
-//            return null;
-//        } else {
-//            return products;
-//        }
-//    }
+    public List<Cart> findAll(){
+        List<Cart> carts = cartRepository.findAll();
+        if(carts.isEmpty()){
+            throw new DataNotFoundException("No cart information found :(");
+        }else {
+            return carts;
+        }
+    }
 
     @Transactional
     public boolean update(Cart cartToUpdate) {
@@ -32,12 +34,16 @@ public class CartService {
         return true;
     }
 
-//    @PostMapping
+    public CartResponseDTO createCart(Cart newCart) {
+        Optional<Cart> cart = Optional.of(cartRepository.save(newCart));
+
+        return cart.map(CartResponseDTO::new).get();
+    }
+
     public Cart create(Cart cart) {
         return cartRepository.save(cart);
     }
 
-//    @DeleteMapping
     public boolean delete(Cart cart) {
         cartRepository.delete(cart);
         return true;

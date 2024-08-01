@@ -1,12 +1,9 @@
 package com.revature.revbay.cart;
 
 import com.revature.revbay.dtos.CartResponseDTO;
-import com.revature.revbay.products.Products;
 import com.revature.revbay.util.exceptions.DataNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +18,15 @@ public class CartService {
 
     public List<Cart> findAll(){
         List<Cart> carts = cartRepository.findAll();
+        if(carts.isEmpty()){
+            throw new DataNotFoundException("No cart information found :(");
+        }else {
+            return carts;
+        }
+    }
+
+    public List<Cart> findByUserId(int id) {
+        List<Cart> carts = cartRepository.findByUserId(id).get();
         if(carts.isEmpty()){
             throw new DataNotFoundException("No cart information found :(");
         }else {

@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/cart")
@@ -29,6 +30,12 @@ public class CartController {
     @GetMapping
     public List<Cart> getAllCart(){
         return cartService.findAll();
+    }
+
+    //might need to change to not retunr a repsonse entity.
+    @GetMapping("/{id}")
+    public ResponseEntity<List<Cart>> getByCartId(@PathVariable int id){
+        return  ResponseEntity.ok(cartService.findByUserId(id));
     }
 
     @PostMapping
@@ -51,13 +58,6 @@ public class CartController {
     private ResponseEntity<Boolean> putUpdateCart(@RequestBody Cart updatedCart) {
         return ResponseEntity.ok(cartService.update(updatedCart));
     }
-
-    /*
-    @GetMapping("/{id}")
-    public ResponseEntity<Cart> getByCartId(@PathVariable int id){
-        return ResponseEntity.ok(cartService.findById(id));
-    }
-    */
 
     @DeleteMapping
     public ResponseEntity<Boolean> deleteCart(@RequestBody Cart cart){

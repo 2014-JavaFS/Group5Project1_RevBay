@@ -1,7 +1,8 @@
 # RevatureProjectOneMeetingReports
 
-#### 7/30/2024
+#### 8/1/2024
+Today we spent the first half of the day on qc after which we finished setting up our portoflios.
+After lunch we started learning about typescript and Asaf added actuators to the project.
 
-Yesterday the Team was working on fixing code related to making postman api calls function, and their about me section. Roadblocks were that what we thought our API was asking for wasn't what it actually wanted in some instances and caused issues.
-
-Today We attempted to figure out and fix those API/Repository issues, and finish our about me things with time permiting studying for the test tommorow and doing the SQL competency assignment.
+We  planned out who will work on what on the project, only roadblock in this project might be time
+contraints.

@@ -1,5 +1,11 @@
 # RevatureProjectOneMeetingReports
 
+#### 8/1/2024
+
+#### 7/30/2024
+Worked on API/Repositrory and  finsihed about me html.  Planned what to work on project in the following days.
+
+
 #### 7/25/2024
 Yesterday the Team finished up feature structures and aws database setup. There wasn't really any roadblocks, and everything was pushed up to Git.
 

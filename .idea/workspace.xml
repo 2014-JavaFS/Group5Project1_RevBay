@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d75d4c25-71c8-4193-9d2c-f9cb91c17f21" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/Products/ProductsControllerIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/Products/ProductsControllerTestSuite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/Products/ProductsRepositoryIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/Products/ProductsServiceIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/Products/ProductsServiceTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revbay/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revbay/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/user/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +37,12 @@
     &quot;assignee&quot;: &quot;JacobMRyan12&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/2014-JavaFS/Group5Project1_RevBay.git",
-    "accountId": "7db7b274-5089-47dc-917a-d5ce89ec91b2"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/2014-JavaFS/Group5Project1_RevBay.git&quot;,
+    &quot;accountId&quot;: &quot;7db7b274-5089-47dc-917a-d5ce89ec91b2&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -48,12 +55,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.RevbayApplication.executor": "Run",
+    "JUnit.ProductsControllerTestSuite.executor": "Run",
+    "JUnit.ProductsRepositoryIntegrationTest.executor": "Run",
+    "JUnit.ProductsServiceTestSuite.executor": "Run",
     "Maven.revbay [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "asaf-new-branch",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/asafahmed/IdeaProjects/Group5Project1_RevBay",
+    "last_opened_file_path": "C:/Users/asafb/IdeaProjects/Group5Project1_RevBay/revbay/src/test/resources",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -61,6 +71,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\asafb\IdeaProjects\Group5Project1_RevBay\revbay\src\test\java\com\revature\revbay\Products" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.revature.revbay.util.enums" />
     </key>

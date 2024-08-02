@@ -24,7 +24,7 @@ public class UserService  {
     public List<User> findAll(){
         List<User> users = userRepository.findAll();
         if(users.isEmpty()){
-            throw new DataNotFoundException("No product information found");
+            throw new DataNotFoundException("No user information found");
         }else {
             return users;
         }

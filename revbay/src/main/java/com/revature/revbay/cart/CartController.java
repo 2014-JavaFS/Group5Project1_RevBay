@@ -28,8 +28,8 @@ public class CartController {
     }
 
     @GetMapping
-    public List<Cart> getAllCart(){
-        return cartService.findAll();
+    public ResponseEntity<List<Cart>> getAllCart(){
+        return ResponseEntity.ok(cartService.findAll());
     }
 
     //might need to change to not retunr a repsonse entity.

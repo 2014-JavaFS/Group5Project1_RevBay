@@ -1,10 +1,13 @@
 package com.revature.revbay.transactions;
 
+import com.revature.revbay.dtos.TransactionRequestDTO;
+import com.revature.revbay.dtos.TransactionResponseDTO;
 import com.revature.revbay.util.exceptions.DataNotFoundException;
 import com.revature.revbay.util.exceptions.InvalidInputException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 @Service
 public class TransactionsService  {
@@ -31,6 +34,11 @@ public class TransactionsService  {
     public Transactions create(Transactions transactions) {
 
         return transactionsRepository.save(transactions);
+    }
+
+    public TransactionResponseDTO createDTO(Transactions transactions){
+        Optional <Transactions> transaction =Optional.of(transactionsRepository.save(transactions));
+        return transaction.map(TransactionResponseDTO::new).get();
     }
 
 

@@ -44,6 +44,7 @@ public class TransactionsController {
         transactions.setBuyerID(user);
         transactions.setSellerID(products);
         transactions.setQuantity(transactionRequestDTO.getQuantity());
+        transactions.setQuantity(transactionRequestDTO.getQuantity());
 
         TransactionResponseDTO makingTransaction = transactionsService.createDTO(transactions);
 

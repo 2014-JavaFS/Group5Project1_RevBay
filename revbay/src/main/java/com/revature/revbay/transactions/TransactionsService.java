@@ -37,8 +37,12 @@ public class TransactionsService  {
     }
 
     public TransactionResponseDTO createDTO(Transactions transactions){
-        Optional <Transactions> transaction =Optional.of(transactionsRepository.save(transactions));
-        return transaction.map(TransactionResponseDTO::new).get();
+        //Optional <Transactions> transaction =Optional.of(transactionsRepository.save(transactions));
+        //return transaction.map(TransactionResponseDTO::new).get();
+
+        TransactionResponseDTO testingPost = new TransactionResponseDTO(transactions);
+        transactionsRepository.save(transactions);
+        return testingPost;
     }
 
 

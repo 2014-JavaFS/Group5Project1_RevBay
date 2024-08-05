@@ -25,7 +25,7 @@ public class Transactions {
     //Declaring Variables
     private int transactionID;
     @ManyToOne
-    @JoinColumn(name="seller_id",referencedColumnName = "userId",nullable = false)
+    @JoinColumn(name="seller_id",referencedColumnName = "productId",nullable = false)
     private Products sellerID;
 
     @ManyToOne

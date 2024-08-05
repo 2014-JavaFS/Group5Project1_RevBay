@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d75d4c25-71c8-4193-9d2c-f9cb91c17f21" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/products/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/products/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/products/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/products/ProductsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/transactions/Transactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/transactions/Transactions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/transactions/TransactionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/transactions/TransactionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/TransactionTests/TransactionControllerIntegrationTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/TransactionTests/TransactionControllerIntegrationTesting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/TransactionTests/TransactionRepositoryIntegrationTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/TransactionTests/TransactionRepositoryIntegrationTesting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

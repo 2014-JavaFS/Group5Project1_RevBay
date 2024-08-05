@@ -22,7 +22,7 @@ public class Products {
     @Enumerated(EnumType.STRING)
     private Category category;
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "userId", nullable = false)
     private User user;
     @Column(nullable = false, columnDefinition = "integer check (quantity>=0)")
     private int quantity;

@@ -38,6 +38,7 @@ public class TransactionsController {
 
         Products products = productsService.findById(transactionRequestDTO.getSellerID());
         User user = userService.findById(transactionRequestDTO.getBuyerID());
+        products.setProductId(transactionRequestDTO.getSellerID());
 
         Transactions transactions = new Transactions();
         transactions.setBuyerID(user);

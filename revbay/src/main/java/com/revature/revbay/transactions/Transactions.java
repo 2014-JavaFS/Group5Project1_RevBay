@@ -44,6 +44,7 @@ public class Transactions {
         this.buyerID=user;
         Products products= new Products();
         products.setProductId(transactionRequestDTO.getSellerID());
+        this.sellerID=products;
     }
 
 

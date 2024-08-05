@@ -35,11 +35,13 @@ public class ProductsService {
     }
     public Products findById(int id){
         Optional<Products> products = productsRepository.findById(id);
+
         if(products.isEmpty()){
-            throw new DataNotFoundException("Product information by id not found");
+            throw new DataNotFoundException("Product information by id not found calling from findByID");
         }else {
             return products.get();
         }
+
     }
     public boolean delete(Products products){
         productsRepository.delete(products);

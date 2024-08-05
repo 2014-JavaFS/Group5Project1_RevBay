@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d75d4c25-71c8-4193-9d2c-f9cb91c17f21" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/dtos/TransactionRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/dtos/TransactionResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/revbay/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/products/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/products/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/products/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/products/ProductsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/transactions/Transactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/transactions/Transactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/transactions/TransactionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/main/java/com/revature/revbay/transactions/TransactionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/TransactionTests/TransactionControllerIntegrationTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/TransactionTests/TransactionControllerIntegrationTesting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/TransactionTests/TransactionRepositoryIntegrationTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/revbay/src/test/java/com/revature/revbay/TransactionTests/TransactionRepositoryIntegrationTesting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,19 +49,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.RevbayApplication.executor": "Run",
-    "Maven.revbay [compile].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "jacobDTOSwitchAttempt",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/asafahmed/IdeaProjects/Group5Project1_RevBay",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.RevbayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.revbay [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;jacobDTOSwitchAttempt&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/asafahmed/IdeaProjects/Group5Project1_RevBay&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.revature.revbay.util.enums" />
@@ -71,6 +72,26 @@
     <option name="myCommands">
       <command value="mvn compile" />
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="RevbayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.revature.revbay.RevbayApplication" />
+      <module name="revbay" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.revbay.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RevbayApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

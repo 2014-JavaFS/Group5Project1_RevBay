@@ -1,4 +1,4 @@
 # RevatureProjectOneMeetingReports
 
-#### 8/2/2024
-Today we decided to work on test cases, improve on buyer functionalities and also add dtos if neccessary. The roadbloack we faced is during the running of test cases it gives you error that the mockrepository or mockservice is null.
+#### 08/05/2024
+Last week, we worked on completing the backend part of our project. Today we plan to start working on the frontend of our project to be able to test and, if needed, adjust our backend. We are currently still having difficulty in getting our test cases working.

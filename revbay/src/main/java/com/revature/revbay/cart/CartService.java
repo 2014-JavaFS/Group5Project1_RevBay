@@ -3,6 +3,7 @@ package com.revature.revbay.cart;
 import com.revature.revbay.dtos.CartResponseDTO;
 import com.revature.revbay.util.exceptions.DataNotFoundException;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

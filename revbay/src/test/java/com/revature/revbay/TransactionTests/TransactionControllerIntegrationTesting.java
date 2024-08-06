@@ -40,22 +40,13 @@ public class TransactionControllerIntegrationTesting {
     @Test
     public void testCreateUserWithMockMvc() throws Exception{
         String transactionJson =
-                " {\n" +
-                "        \"productId\": \"1\",\n" +
-                "        \"name\": \"Dell Keyboard\",\n" +
-                "        \"category\": \"ELECTRONICS\",\n" +
-                "        \"user\":{\n" +
-                "        \"userId\": 1,\n" +
-                "        \"firstName\": \"May\",\n" +
-                "        \"lastName\": \"Joon\",\n" +
-                "        \"email\": \"joon3@email.com\",\n" +
-                "        \"password\": \"securePass3\",\n" +
-                "        \"userType\": \"SELLER\"\n" +
-                "    },\n" +
-                "    \"quantity\":5,\n" +
-                "    \"price\":10.5\n" +
-                "}";
-        mockMvc.perform(MockMvcRequestBuilders.post("/products")
+                "{\n" +
+                        "            \"sellerID\": 4,\n" +
+                        "            \"buyerID\": 1,\n" +
+                        "            \"Quantity\": 1.00\n"
+                        + "}";
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/Transactions")
                 .content(transactionJson)
                 .contentType(MediaType.APPLICATION_JSON)).andExpect(MockMvcResultMatchers.status().is(201));
     }

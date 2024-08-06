@@ -25,6 +25,7 @@ public class CartControllerIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
 
+
     @Test
     public void whenPostRequestCartWithValidCartThenCorrectResponse() throws Exception {
         String cartJson = "{\n" +

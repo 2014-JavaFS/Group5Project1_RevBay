@@ -1,5 +1,6 @@
 package com.revature.revbay.user;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ public class UserController {
     }
 
     @PostMapping
-    private ResponseEntity<User> postNewUser(@RequestBody User user) {
+    private ResponseEntity<User> postNewUser(@Valid @RequestBody User user) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(userService.create(user));
@@ -28,18 +29,18 @@ public class UserController {
     }
 
     @DeleteMapping
-    private ResponseEntity<Void> deleteUser(@RequestBody User user) {
+    private ResponseEntity<Void> deleteUser(@Valid @RequestBody User user) {
         userService.delete(user);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping
-    private ResponseEntity<Void> putUpdateUser(@RequestBody User user) {
+    private ResponseEntity<Void> putUpdateUser(@Valid @RequestBody User user) {
         userService.update(user);
         return ResponseEntity.noContent().build();
     }
 
     private int loggedInCheck() {
-      return -1;
+        return -1;
     }
 }

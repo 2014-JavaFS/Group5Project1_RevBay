@@ -3,8 +3,7 @@ package com.revature.revbay.util.auth;
 import com.revature.revbay.user.User;
 import com.revature.revbay.user.UserService;
 import org.springframework.stereotype.Service;
-
-import javax.naming.AuthenticationException;
+import javax.security.sasl.AuthenticationException;
 
 @Service
 public class AuthService {
@@ -18,6 +17,6 @@ public class AuthService {
         User user = userService.findByEmailAndPassword(email, password);
 
         if(user == null) throw new AuthenticationException("Invalid credentials, please try again");
-        return user;
+          return user;
     }
 }

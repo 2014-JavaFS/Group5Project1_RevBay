@@ -5,7 +5,7 @@ import com.revature.revbay.util.exceptions.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.naming.AuthenticationException;
+import javax.security.sasl.AuthenticationException;
 import java.util.List;
 
 @Service
@@ -17,17 +17,17 @@ public class UserService  {
         this.userRepository = userRepository;
     }
 
-
     public User create(User newUser) {
         return userRepository.save(newUser);
     }
+  
     public List<User> findAll(){
         List<User> users = userRepository.findAll();
-        if(users.isEmpty()){
+        
+        if(users.isEmpty())
             throw new DataNotFoundException("No user information found");
-        }else {
+        else 
             return users;
-        }
     }
 
     public User findById(int userId) {

@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import javax.security.sasl.AuthenticationException;
 
-import javax.naming.AuthenticationException;
-
+@CrossOrigin(exposedHeaders = {"userId", "userType"}, origins = "http://127.0.0.1:8080/")
 @RestController
 @RequestMapping("/auth")
-public class AuthController {
+public class AuthController  {
     private final AuthService authService;
 
     @Autowired
@@ -30,7 +30,8 @@ public class AuthController {
 
     @ExceptionHandler(AuthenticationException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public String handleAuthenticationException(AuthenticationException e){
-        return e.getMessage();
+    public String handleAuthenticationException(AuthenticationException ae){
+        return ae.getMessage();
     }
 }
+

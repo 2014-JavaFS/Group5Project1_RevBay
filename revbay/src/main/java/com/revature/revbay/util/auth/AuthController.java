@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.security.sasl.AuthenticationException;
 
 @CrossOrigin(exposedHeaders = {"userId", "userType"}, origins = "http://127.0.0.1:8080/")
@@ -22,9 +21,10 @@ public class AuthController  {
     @PostMapping
     private ResponseEntity<Void> postLogin(@RequestParam String email, @RequestParam String password) throws AuthenticationException {
         User user = authService.login(email, password);
+
         return ResponseEntity.noContent()
                 .header("userId", String.valueOf(user.getUserId()))
-                .header("memberType", user.getUserType().name())
+                .header("userType", String.valueOf(user.getUserType()))
                 .build();
     }
 
@@ -34,3 +34,4 @@ public class AuthController  {
         return ae.getMessage();
     }
 }
+

@@ -2,8 +2,8 @@ package com.revature.revbay.products;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -15,11 +15,15 @@ public class ProductsController {
         this.productsService = productsService;
     }
     @GetMapping
-    public List<Products> getAllProducts(){
-        return productsService.findAll();
+    public ResponseEntity<List<Products>> getAllProducts(){
+        return ResponseEntity.status(200).body(productsService.findAll());
+    }
+    @GetMapping("/users/{userId}")
+    public ResponseEntity<List<Products>> getProductsByUserId(@PathVariable int userId){
+        return ResponseEntity.status(200).body(productsService.findProductsByUserId(userId));
     }
     @PostMapping
-    public ResponseEntity<Products> createNewProducts(@RequestBody Products products){
+    public ResponseEntity<Products> createNewProducts( @RequestBody Products products){
         return ResponseEntity.status(200).body(productsService.create(products));
     }
     @PutMapping

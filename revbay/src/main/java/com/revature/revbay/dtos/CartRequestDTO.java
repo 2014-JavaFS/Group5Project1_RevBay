@@ -1,6 +1,7 @@
 package com.revature.revbay.dtos;
 
 public class CartRequestDTO {
+    private int activeCartItem;
     private int productId;
     private int userId;
     private int quantity;
@@ -14,6 +15,22 @@ public class CartRequestDTO {
         this.userId = userId;
         this.quantity = quantity;
         this.address = address;
+    }
+
+    public CartRequestDTO(int activeCartItem,int productId, int userId, int quantity, String address) {
+        this.activeCartItem = activeCartItem;
+        this.productId = productId;
+        this.userId = userId;
+        this.quantity = quantity;
+        this.address = address;
+    }
+
+    public int getActiveCartItem() {
+        return activeCartItem;
+    }
+
+    public void setActiveCartItem(int activeCartItem) {
+        this.activeCartItem = activeCartItem;
     }
 
     public int getProductId() {

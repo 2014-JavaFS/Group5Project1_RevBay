@@ -56,12 +56,26 @@ public class CartController {
     }
 
     @PutMapping
-    private ResponseEntity<Boolean> putUpdateCart(@RequestBody Cart updatedCart) {
-        return ResponseEntity.ok(cartService.update(updatedCart));
+    private ResponseEntity<Boolean> putUpdateCart(@RequestBody CartRequestDTO cartRequestDTO) {
+        Products product = productsService.findById(cartRequestDTO.getProductId());
+        User user = userService.findById(cartRequestDTO.getUserId());
+
+        Cart cart = new Cart();
+        cart.setActiveCartItem(cartRequestDTO.getActiveCartItem());
+        cart.setProducts(product);
+        cart.setUser(user);
+        cart.setQuantity(cartRequestDTO.getQuantity());
+        cart.setAddress(cartRequestDTO.getAddress());
+
+        boolean updated = cartService.update(cart);
+
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(updated);
     }
 
     @DeleteMapping
-    public ResponseEntity<Boolean> deleteCart(@RequestBody Cart cart){
-        return ResponseEntity.ok(cartService.delete(cart));
+    public ResponseEntity<Boolean> deleteCart(@RequestParam int id){
+        boolean deleted = cartService.delete(id);
+
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(deleted);
     }
 }

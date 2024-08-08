@@ -9,17 +9,23 @@ public class TransactionResponseDTO {
     private int buyerID;
     private int sellerID;
 
+
+
+    private int quantity;
+
     public TransactionResponseDTO(){}
-    public TransactionResponseDTO(BigDecimal totalPrice, int buyerID, int sellerID){
+    public TransactionResponseDTO(BigDecimal totalPrice, int buyerID, int sellerID, int quantity){
         this.buyerID=buyerID;
         this.totalPrice=totalPrice;
         this.sellerID=sellerID;
+        this.quantity=quantity;
     }
 
     public TransactionResponseDTO(Transactions currentTransaction){
-        this.totalPrice=currentTransaction.getTotalPrice();
+        this.totalPrice=BigDecimal.valueOf(currentTransaction.getSellerID().getPrice() * currentTransaction.getQuantity());
         this.buyerID=currentTransaction.getBuyerID().getUserId();
-        this.sellerID=getSellerID();
+        this.sellerID=currentTransaction.getSellerID().getProductId();
+        this.quantity=currentTransaction.getQuantity();
     }
 
     public BigDecimal getTotalPrice() {
@@ -44,5 +50,13 @@ public class TransactionResponseDTO {
 
     public void setSellerID(int sellerID) {
         this.sellerID = sellerID;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

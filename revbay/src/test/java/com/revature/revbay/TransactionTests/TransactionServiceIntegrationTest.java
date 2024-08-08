@@ -7,8 +7,7 @@ import com.revature.revbay.transactions.TransactionsRepository;
 import com.revature.revbay.transactions.TransactionsService;
 import com.revature.revbay.user.User;
 import com.revature.revbay.util.enums.Category;
-import com.revature.revbay.util.exceptions.InvalidInputException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -28,7 +27,9 @@ public class TransactionServiceIntegrationTest {
     private TransactionsService  fakeTransactionsService;
 
     @InjectMocks
-    private TransactionsRepository fakeTransactionsRepository;
+    private TransactionsRepository transactionsRepository;
+
+
 
     @Test
     public void testSaveAndRetrieveTransaction(){
@@ -48,8 +49,8 @@ public class TransactionServiceIntegrationTest {
         User mockUser = new User(5,"Test Name-F", "Test Name-L", "Test Email", "Test Password", User.UserType.BUYER);
         Products mockProduct = new Products(5, "Test Name-F", Category.GENERAL, mockUser, 9999, 4.99);
         mockTransactions=new Transactions(696969,mockProduct,mockUser,2,new BigDecimal(89.75),"Test Location");
-        fakeTransactionsRepository.save(mockTransactions);
-        Transactions fromSavedDataTransaction = fakeTransactionsRepository.getReferenceById(696969);
+        transactionsRepository.save(mockTransactions);
+        Transactions fromSavedDataTransaction = transactionsRepository.getReferenceById(696969);
         //TODO Possibly replace this block with some assert stuff
 
         if(
@@ -79,7 +80,7 @@ public class TransactionServiceIntegrationTest {
     public void testFindByID(){
         Transactions mockTransaction= new Transactions();
         try {
-            mockTransaction = fakeTransactionsRepository.findById(1).get();
+            mockTransaction = transactionsRepository.findById(1).get();
 
         }catch(NoSuchElementException e){
             e.printStackTrace();
@@ -94,11 +95,11 @@ public class TransactionServiceIntegrationTest {
         User mockUser = new User(5,"Test Name-F", "Test Name-L", "Test Email", "Test Password", User.UserType.BUYER);
         Products mockProduct = new Products(5, "Test Name-F", Category.GENERAL, mockUser, 9999, 4.99);
         Transactions testUpdateTransaction = new Transactions(696969,mockProduct,mockUser,2,new BigDecimal(89.75),"Test Location");
-        fakeTransactionsRepository.save(testUpdateTransaction);
+        transactionsRepository.save(testUpdateTransaction);
         testUpdateTransaction.setQuantity(1000);
         fakeTransactionsService.update(testUpdateTransaction);
         testUpdateTransaction.setQuantity(100);
-        testUpdateTransaction=fakeTransactionsRepository.findById(696969).get();
+        testUpdateTransaction= transactionsRepository.findById(696969).get();
         assertEquals(1000, testUpdateTransaction.getQuantity());
 
     }

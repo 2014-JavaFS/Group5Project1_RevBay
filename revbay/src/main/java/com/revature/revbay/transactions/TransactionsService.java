@@ -1,11 +1,13 @@
 package com.revature.revbay.transactions;
 
+import com.revature.revbay.cart.Cart;
 import com.revature.revbay.dtos.TransactionRequestDTO;
 import com.revature.revbay.dtos.TransactionResponseDTO;
 import com.revature.revbay.util.exceptions.DataNotFoundException;
 import com.revature.revbay.util.exceptions.InvalidInputException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -65,4 +67,17 @@ public class TransactionsService  {
     }
 
 
+    public List<TransactionResponseDTO> getHistory(int userId) {
+
+        List<Transactions> toSort = transactionsRepository.findAll();
+        List<TransactionResponseDTO> sorted = new ArrayList<>();
+        for(int i=0;i<toSort.size();i++){
+            if(toSort.get(i).getBuyerID().getUserId()==userId){
+                TransactionResponseDTO tempDTO = new TransactionResponseDTO(toSort.get(i));
+                sorted.add(tempDTO);
+            }
+        }
+
+        return sorted;
+    }
 }

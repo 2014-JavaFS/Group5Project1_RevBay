@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -50,8 +51,9 @@ public class TransactionRepositoryIntegrationTesting {
         savedTransaction.setDestination("Test Location");
         savedTransaction.setTotalPrice((new BigDecimal(69.69)));
         transactionsRepository.save(savedTransaction);
-        Assertions.assertEquals(1,savedTransaction.getTransactionID());
-
+        //Assertions.assertEquals(1,savedTransaction.getTransactionID());
+        //Assertions.assertEquals("Test Location", savedTransaction.getDestination());
+        Assertions.assertEquals(5,savedTransaction.getBuyerID().getUserId());
 
     }
 

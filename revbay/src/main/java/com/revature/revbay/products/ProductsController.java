@@ -2,10 +2,11 @@ package com.revature.revbay.products;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/products")
 public class ProductsController {
@@ -23,7 +24,7 @@ public class ProductsController {
         return ResponseEntity.status(200).body(productsService.findProductsByUserId(userId));
     }
     @PostMapping
-    public ResponseEntity<Products> createNewProducts(@RequestBody Products products){
+    public ResponseEntity<Products> createNewProducts( @RequestBody Products products){
         return ResponseEntity.status(200).body(productsService.create(products));
     }
     @PutMapping

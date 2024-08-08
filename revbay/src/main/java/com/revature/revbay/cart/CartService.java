@@ -51,8 +51,8 @@ public class CartService {
         return cartRepository.save(cart);
     }
 
-    public boolean delete(Cart cart) {
-        cartRepository.delete(cart);
+    public boolean delete(int id) {
+        cartRepository.deleteById(id);
         return true;
     }
 

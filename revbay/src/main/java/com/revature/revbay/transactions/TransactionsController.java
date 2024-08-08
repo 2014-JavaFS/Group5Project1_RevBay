@@ -110,7 +110,7 @@ public class TransactionsController {
             //Adding to User Return
             userReturn.add(transactionsService.createDTO(toDTO));
             //Deleting the Entry from Cart Repository
-            cartService.delete(sorted.get(i));
+            cartService.delete(sorted.get(i).getActiveCartItem());
         }
 
         return userReturn;

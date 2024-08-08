@@ -14,10 +14,12 @@ public class TransactionResponseDTO {
     private int quantity;
 
     public TransactionResponseDTO(){}
-    public TransactionResponseDTO(BigDecimal totalPrice, int buyerID, int sellerID){
+
+    public TransactionResponseDTO(BigDecimal totalPrice, int buyerID, int sellerID, int quantity){
         this.buyerID=buyerID;
         this.totalPrice=totalPrice;
         this.sellerID=sellerID;
+        this.quantity=quantity;
     }
 
     public TransactionResponseDTO(Transactions currentTransaction){

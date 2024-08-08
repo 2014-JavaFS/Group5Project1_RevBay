@@ -53,20 +53,21 @@ public class TransactionServiceIntegrationTest {
         //TODO Possibly replace this block with some assert stuff
 
         //if(
-           //     fromSavedDataTransaction.getTransactionID() == mockTransactions.getTransactionID()
-           //     &&
-           //             fromSavedDataTransaction.getSellerID() == mockTransactions.getSellerID()
-           //     &&
-           //             fromSavedDataTransaction.getBuyerID() == mockTransactions.getBuyerID()
-          //      &&
-          //              fromSavedDataTransaction.getQuantity() == mockTransactions.getQuantity()
-         //       &&
-         //               Objects.equals(fromSavedDataTransaction.getTotalPrice(), mockTransactions.getTotalPrice())
+        //     fromSavedDataTransaction.getTransactionID() == mockTransactions.getTransactionID()
+        //     &&
+        //             fromSavedDataTransaction.getSellerID() == mockTransactions.getSellerID()
+        //     &&
+        //             fromSavedDataTransaction.getBuyerID() == mockTransactions.getBuyerID()
+        //      &&
+        //              fromSavedDataTransaction.getQuantity() == mockTransactions.getQuantity()
+        //       &&
+        //               Objects.equals(fromSavedDataTransaction.getTotalPrice(), mockTransactions.getTotalPrice())
         //        &&
         //                Objects.equals(fromSavedDataTransaction.getDestination(), mockTransactions.getDestination())
         //){
-         //   System.out.println("This should work and be Equals, " +
-         //           "probably should have been using Assertions and Equals though");
+        //   System.out.println("This should work and be Equals, " +
+        //           "probably should have been using Assertions and Equals though");
+
         //}
         //else {
         //    System.out.println("Looks like the save and Retrieved didn't work correctly");

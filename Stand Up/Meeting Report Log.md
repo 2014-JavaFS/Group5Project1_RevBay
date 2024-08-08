@@ -1,5 +1,16 @@
 # RevatureProjectOneMeetingReports
 
+#### 8/2/2024
+Today we decided to work on test cases, improve on buyer functionalities and also add dtos if neccessary. The roadbloack we faced is during the running of test cases it gives you error that the mockrepository or mockservice is null.
+
+#### 8/1/2024
+Today we spent the first half of the day on qc after which we finished setting up our portoflios. After lunch we started learning about typescript and Asaf added actuators to the project.
+
+We planned out who will work on what on the project, only roadblock in this project might be time contraints.
+#### 7/30/2024
+Worked on API/Repositrory and  finsihed about me html.  Planned what to work on project in the following days.
+
+
 #### 7/25/2024
 Yesterday the Team finished up feature structures and aws database setup. There wasn't really any roadblocks, and everything was pushed up to Git.
 

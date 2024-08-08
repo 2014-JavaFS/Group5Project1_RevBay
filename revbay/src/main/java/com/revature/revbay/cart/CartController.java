@@ -11,7 +11,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/cart")
 public class CartController {
@@ -27,8 +29,14 @@ public class CartController {
     }
 
     @GetMapping
-    public List<Cart> getAllCart(){
-        return cartService.findAll();
+    public ResponseEntity<List<Cart>> getAllCart(){
+        return ResponseEntity.ok(cartService.findAll());
+    }
+
+    //might need to change to not retunr a repsonse entity.
+    @GetMapping("/{id}")
+    public ResponseEntity<List<Cart>> getByCartId(@PathVariable int id){
+        return  ResponseEntity.ok(cartService.findByUserId(id));
     }
 
     @PostMapping
@@ -48,19 +56,26 @@ public class CartController {
     }
 
     @PutMapping
-    private ResponseEntity<Boolean> putUpdateCart(@RequestBody Cart updatedCart) {
-        return ResponseEntity.ok(cartService.update(updatedCart));
-    }
+    private ResponseEntity<Boolean> putUpdateCart(@RequestBody CartRequestDTO cartRequestDTO) {
+        Products product = productsService.findById(cartRequestDTO.getProductId());
+        User user = userService.findById(cartRequestDTO.getUserId());
 
-    /*
-    @GetMapping("/{id}")
-    public ResponseEntity<Cart> getByCartId(@PathVariable int id){
-        return ResponseEntity.ok(cartService.findById(id));
+        Cart cart = new Cart();
+        cart.setActiveCartItem(cartRequestDTO.getActiveCartItem());
+        cart.setProducts(product);
+        cart.setUser(user);
+        cart.setQuantity(cartRequestDTO.getQuantity());
+        cart.setAddress(cartRequestDTO.getAddress());
+
+        boolean updated = cartService.update(cart);
+
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(updated);
     }
-    */
 
     @DeleteMapping
-    public ResponseEntity<Boolean> deleteCart(@RequestBody Cart cart){
-        return ResponseEntity.ok(cartService.delete(cart));
+    public ResponseEntity<Boolean> deleteCart(@RequestParam int id){
+        boolean deleted = cartService.delete(id);
+
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(deleted);
     }
 }

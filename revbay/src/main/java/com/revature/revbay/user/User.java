@@ -15,15 +15,20 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
-    @Column(nullable = false, columnDefinition = "varchar(20)")
+
+    @Column(columnDefinition = "varchar(20)")
     private String firstName;
-    @Column(nullable = false, columnDefinition = "varchar(30)")
+
+    @Column(columnDefinition = "varchar(30)")
     private String lastName;
+
     @Column(unique = true, nullable = false, columnDefinition = "varchar(40)")
     private String email;
+
     @Column(nullable = false, columnDefinition = "varchar(60)")
     private String password;
-    @Column(nullable = false, columnDefinition = "varchar(6)")
+
+    @Column(columnDefinition = "varchar(6) default 'BUYER'")
     @Enumerated(EnumType.STRING)
     private UserType userType;
 

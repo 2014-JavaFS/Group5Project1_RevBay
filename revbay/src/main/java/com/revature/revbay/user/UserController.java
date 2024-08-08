@@ -1,6 +1,6 @@
 package com.revature.revbay.user;
 
-import com.revature.revbay.products.Products;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -18,12 +19,12 @@ public class UserController {
         this.userService = userService;
     }
     @GetMapping
-    public ResponseEntity<List<User>> getAllProducts(){
+    public ResponseEntity<List<User>> getAllUsers(){
         return ResponseEntity.status(200).body(userService.findAll());
     }
 
-    @PostMapping("/signup")
-    private ResponseEntity<User> postNewUser(@RequestBody User user) {
+    @PostMapping
+    private ResponseEntity<User> postNewUser(@Valid @RequestBody User user) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(userService.create(user));
@@ -35,17 +36,18 @@ public class UserController {
     }
 
     @DeleteMapping
-    private ResponseEntity<Boolean> deleteUser(@RequestBody User user) {
-        return ResponseEntity.ok(userService.delete(user));
+    private ResponseEntity<Void> deleteUser(@Valid @RequestBody User user) {
+        userService.delete(user);
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping
-    private ResponseEntity<Void> putUpdateUser(@RequestBody User user) {
+    private ResponseEntity<Void> putUpdateUser(@Valid @RequestBody User user) {
         userService.update(user);
         return ResponseEntity.noContent().build();
     }
 
     private int loggedInCheck() {
-      return -1;
+        return -1;
     }
 }

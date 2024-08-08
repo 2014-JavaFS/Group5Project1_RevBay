@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.security.sasl.AuthenticationException;
 
-@CrossOrigin(exposedHeaders = {"userId", "userType"}, origins = "http://127.0.0.1:8080/")
+@CrossOrigin(exposedHeaders = {"userId", "userType"})
 @RestController
 @RequestMapping("/auth")
 public class AuthController  {

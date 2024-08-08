@@ -17,6 +17,6 @@ public class AuthService {
         User user = userService.findByEmailAndPassword(email, password);
 
         if(user == null) throw new AuthenticationException("Invalid credentials, please try again");
-          return user;
+        return user;
     }
 }
